@@ -147,3 +147,18 @@ def approximate_ermit(x, y, yd, n, x0):
     x_ermit, y_ermit, yd_ermit = prepare_arrays_ermit(x, y, yd, n, x0)
     coeffs = find_coeffs_ermit(x_ermit, y_ermit, yd_ermit, n)
     return count_polynom(x_ermit, coeffs, n, x0)
+
+def main():
+    print('Test on a line')
+    print('Newton: Expected 2.0, got', approximate_newton([1., 3.], [1., 3.], 1, 2))  
+    print('Ermit: Expected 2.0, got', approximate_ermit([1., 3.], [1., 3.], [1, 1], 3, 2))
+    print('Root: Expected 0.0, got', find_root_back_interp([-1, 1], [-1, 1], 1)) 
+    print('Test Newton on example from lection')
+    x = [0, 0.25, 0.5, 0.75, 1]
+    y = [1, 0.924, 0.707, 0.383, 0.000]  
+    n = 4
+    x0 = 0.6
+    print('Expected 0.589, got', approximate_newton(x, y, n, x0)) 
+    
+if __name__ == "__main__":
+    main()
