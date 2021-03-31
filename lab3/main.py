@@ -97,14 +97,3 @@ print('Интерполяция полиномом Ньютона 3 степен
 print('Настоящее значение:', res_real2)
 
 
-x3 = 1.9
-coeffs3 = choose_coeffs(data, x3)
-res_spline3 = count_polynom3(*coeffs3, x3)
-res_newton3 = lab1.approximate_newton(data['x'], data['y'], 3, x3)
-res_real3 = x3 ** 2
-
-print('\nТочка:', x3)
-print('Интерполяция кубическим сплайном:', res_spline3)
-print('Интерполяция полиномом Ньютона 3 степени:', res_newton3)
-print('Настоящее значение:', res_real3)
-print()
